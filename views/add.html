@@ -1,6 +1,15 @@
 {% extends './layout.html' %}
 {% block content %}
 
+<div class="form-group">
+<form style="display:inline" method="POST" action="/products/add">
+  <label for="usr">Name:</label>
+  <input name="product" type="text" class="form-control" id="usr">
+</div>
+
+
+  <button type="submit" class="btn btn-primary">Update Product</button>
+</form>
 
 
 {% endblock %}

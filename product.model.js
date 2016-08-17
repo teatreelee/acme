@@ -1,3 +1,17 @@
+// var Sequelize = require('sequelize');
+// var db = new Sequelize('postgres://localhost:5432/acme');
+
+// var Product = db.define('product', {
+//   name: {
+//     type: Sequelize.STRING,
+//     allowNull: false
+//   }
+// });
+
+// module.exports = {
+//   Product: Product;
+// };
+
 var _products = [
   { id: 1, name: 'Snacky Cakes' },
   { id: 2, name: 'Flexo Besto Trash Bags' },
@@ -27,8 +41,8 @@ module.exports = {
         return product.id;
     });
 
-    var maxId = Math.max.apply(allProductIds);
-  
+    var maxId = Math.max.apply(null, allProductIds);
+
     product.id = maxId + 1;
 
     _products.push(product);

@@ -1,6 +1,19 @@
 {% extends './layout.html' %}
 {% block content %}
-  
-  
+<a class="btn btn-primary" role="button" href="/add">Add a Product</a>
+
+  <ul class="list-group">
+    {% for product in products %}
+     <li class="list-group-item">
+      <a href="/products/{{ product.id }}">{{product.name}}</a>
+      <a class="btn btn-secondary pull-right" href="/products/{{ product.id }}/edit"> Edit </a>
+      <form style="display:inline" method="POST" action="products/{{ product.id }}/delete">
+        <button type="submit" class="btn btn-danger pull-right">Delete</button>
+      </form>
+    </li>
+     {% endfor %}
+  </ul>
+
+
 
 {% endblock %}
